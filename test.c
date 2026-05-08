@@ -6,7 +6,7 @@
 /*   By: ppernati <ppernati@student.42berlin.d      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 19:17:12 by ppernati          #+#    #+#             */
-/*   Updated: 2026/05/07 14:23:17 by ppernati         ###   ########.fr       */
+/*   Updated: 2026/05/07 20:15:57 by ppernati         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -687,12 +687,12 @@ void libft_ft_split(void)
 	free_str_array(ptr);
 
 	ptr = ft_split("/one/two/three/", '/');
-	char *test2[] = {"", "one", "two", "three", "", NULL};
+	char *test2[] = {"one", "two", "three", NULL};
 	cmp_arrays(ptr, test2);
 	free_str_array(ptr);
 
 	ptr = ft_split("::", ':');
-	char *test3[] = {"", "", "", NULL};
+	char *test3[] = {NULL};
 	cmp_arrays(ptr, test3);
 	free_str_array(ptr);
 
@@ -702,12 +702,12 @@ void libft_ft_split(void)
 	free_str_array(ptr);
 
 	ptr = ft_split(":", ':');
-	char *test5[] = {"", "", NULL};
+	char *test5[] = {NULL};
 	cmp_arrays(ptr, test5);
 	free_str_array(ptr);
 
 	ptr = ft_split("", ':');
-	char *test6[] = {"", NULL};
+	char *test6[] = {NULL};
 	cmp_arrays(ptr, test6);
 	free_str_array(ptr);
 }
@@ -992,8 +992,8 @@ void libft_ft_lstadd_back(void)
 	t_list	*list;
 	t_list	*last;
 
-	list = ft_lstnew("one");
-	
+	list = NULL;
+	ft_lstadd_back(&list, ft_lstnew("one"));
 	ft_lstadd_back(&list, ft_lstnew("two"));
 	ft_lstadd_back(&list, ft_lstnew("three"));
 
